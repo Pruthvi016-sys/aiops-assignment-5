@@ -54,4 +54,4 @@ for i in $(seq 50); do curl -sf localhost:8000/healthz >/dev/null && break; slee
 kill $SRV; trap - EXIT
 
 echo "Done. All result files regenerated (partA/*.json, partB/*_output.txt, partC/*_output.txt, partD/smoke_output.txt)."
-echo "The written report is REPORT.pdf (LaTeX source: report/REPORT.tex)."
+echo "The written report is REPORT.pdf."
