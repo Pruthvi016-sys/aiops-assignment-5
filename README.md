@@ -384,4 +384,14 @@ All in [`evidence_screenshots/`](evidence_screenshots).
 ---
 
 # AI Usage
+Per assignment guidelines, AI tool usage is disclosed per question below. Tool used: Claude (Anthropic).
 
+| Question | AI usage |
+|---|---|
+| Report | Used for LaTeX code and formatting to typeset the 4-page written report (structuring sections, tables, and code blocks within the page limit). |
+| Part A | Used to understand the FastAPI service (Pydantic validation, the cross-field rule, the X-Request-ID middleware, Prometheus `/metrics`), the pytest suite (TestClient, monkeypatch) and the load-test runner; for the exact uvicorn / curl / pytest / `load_test.py` commands used to verify it; and for debugging issues encountered along the way (e.g. `FileNotFoundError` for the model bundle because `eta_data.py` had not been run yet). |
+| Part B | Used to understand the MLflow custom pyfunc, signature, input example, pinned `pip_requirements`, registry aliases with a SQLite store, the pure `decide()` gate with its boundary tests, and the shadow-comparison script; and for the exact `mlflow` commands (`models serve`, `ui`, alias moves) used to verify them. |
+| Part C | Used to understand Ray Serve deployment syntax (fractional `num_cpus`, `autoscaling_config`, FastAPI ingress, deployment handles), the SHA-256 sticky bucketing and the `verify_ray.py` assertions; for the exact `ray start` / `serve run` commands on a 2-CPU Ray; and for debugging issues encountered along the way (e.g. Ray's CLI status commands requiring an auth token, so deployment status was read through the Python API instead). |
+| Part D | Used to understand the smoke-test script (CLI flags, exit codes, model-sanity and 422 checks) and the abort-criteria table, and for the exact commands used to run it against the Part A server. |
+
+**Overall impact:** Claude was used throughout mainly for correct syntax, exact command sequences, and debugging build/networking/scheduling issues as they came up, rather than for the underlying design decisions. The interpretation of all terminal evidence, and the write-up's explanations were done manually. AI assistance had more impact on boilerplate, syntax reference, and troubleshooting than on the actual experimental/infrastructure design — most of the hands-on work (running the builds, applying manifests, reading and verifying evidence) was done by hand. I ran every command on my own laptop (i5-1235U, 12 logical CPUs, 14 GiB RAM), took all 27 screenshots, and checked each output against what the assignment asked. The report was built from my own measurements: every number in the report and in the output files comes from those runs. 
