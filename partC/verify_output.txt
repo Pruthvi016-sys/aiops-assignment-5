@@ -1,0 +1,21 @@
+== deploy weight=0.2 ==
+   deployment EtaProd       status=HEALTHY replicas={'RUNNING': 2}
+   deployment EtaCandidate  status=HEALTHY replicas={'RUNNING': 1}
+   deployment Router        status=HEALTHY replicas={'RUNNING': 1}
+   cluster CPUs=2.0  available CPUs=1.05
+   canary config: {"weight": 0.2, "salt": "swiftparcel-eta-canary-v2", "candidate_autoscaling": {"min_replicas": 1, "initial_replicas": 1, "max_replicas": 3, "target_ongoing_requests": 2, "upscale_delay_s": 5, "downscale_delay_s": 60}}
+   CPU reservation: router 0.2 + prod 2x0.25 + candidate max 3x0.25 = 1.45 CPU <= 2
+(a) 1000 customers in 4.5s: v2 share = 0.195 (195/1000); expected 0.200 +- 0.040; server vs local hash mismatches = 0; arm matches model_version: True
+    replicas that answered: ['v1-pid18638', 'v1-pid18639', 'v2-pid18683']
+(b) second call for 200 customers (43 on v2, 157 on v1): arm changed for 0
+(c) app deleted; redeploying identical app (weight=0.2) ...
+    new replica processes: ['v1-pid20161', 'v1-pid20162', 'v2-pid20242'] (overlap with old: [])
+    arm changed for 0 of 200 customers after redeploy
+(d) weight 0.5: v2 share = 0.483; of 195 customers previously on v2, 0 moved back to v1; 288 customers moved v1 -> v2
+(e) X-Beta: 1 for 50 v1 customers -> 50/50 served by v2; same customers without header -> ['v1']
+== final deployment state ==
+   deployment EtaProd       status=HEALTHY replicas={'RUNNING': 2}
+   deployment EtaCandidate  status=HEALTHY replicas={'RUNNING': 1}
+   deployment Router        status=HEALTHY replicas={'RUNNING': 1}
+   cluster CPUs=2.0  available CPUs=1.05
+ALL CHECKS PASSED: ['a', 'b', 'c', 'd', 'e']

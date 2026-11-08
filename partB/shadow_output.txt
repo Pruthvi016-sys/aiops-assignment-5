@@ -1,0 +1,19 @@
+== B3 shadow comparison: same 200 single-row requests to both servers ==
+{
+  "requests_per_server": 200,
+  "prod_model_version": [
+    "v1"
+  ],
+  "candidate_model_version": [
+    "v2"
+  ],
+  "mean_abs_diff_minutes": 9.48,
+  "pct_diff_gt_10_min": 35.0,
+  "max_abs_diff_minutes": 51.7,
+  "prod_p50_ms": 4.2,
+  "prod_p95_ms": 5.2,
+  "candidate_p50_ms": 4.12,
+  "candidate_p95_ms": 6.66,
+  "info_prod_mae_on_these_200": 11.42,
+  "info_candidate_mae_on_these_200": 6.11
+}

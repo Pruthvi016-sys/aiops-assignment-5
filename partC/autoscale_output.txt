@@ -1,0 +1,43 @@
+autoscaling_config = {'min_replicas': 1, 'initial_replicas': 1, 'max_replicas': 3, 'target_ongoing_requests': 2, 'upscale_delay_s': 5, 'downscale_delay_s': 60}
+t=  0.0s  phase=load  EtaCandidate RUNNING replicas=1  requests served=0
+t=  3.1s  phase=load  EtaCandidate RUNNING replicas=1  requests served=116
+t=  6.1s  phase=load  EtaCandidate RUNNING replicas=1  requests served=237
+t=  9.1s  phase=load  EtaCandidate RUNNING replicas=1  requests served=358
+t= 12.1s  phase=load  EtaCandidate RUNNING replicas=1  requests served=481
+t= 15.1s  phase=load  EtaCandidate RUNNING replicas=1  requests served=610
+t= 18.2s  phase=load  EtaCandidate RUNNING replicas=3  requests served=769
+t= 21.2s  phase=load  EtaCandidate RUNNING replicas=3  requests served=1051
+t= 24.2s  phase=load  EtaCandidate RUNNING replicas=3  requests served=1332
+t= 27.2s  phase=load  EtaCandidate RUNNING replicas=3  requests served=1609
+t= 30.2s  -- load stopped --
+t= 30.2s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1888
+t= 33.3s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 36.3s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 39.3s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 42.3s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 45.4s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 48.4s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 51.4s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 54.4s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 57.5s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 60.5s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 63.5s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 66.5s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 69.6s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 72.6s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 75.6s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 78.6s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 81.7s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 84.7s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 87.7s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 90.7s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 93.8s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 96.8s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t= 99.8s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t=102.8s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t=105.9s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t=108.9s  phase=idle  EtaCandidate RUNNING replicas=3  requests served=1895
+t=111.9s  phase=idle  EtaCandidate RUNNING replicas=1  requests served=1895
+t=114.9s  phase=idle  EtaCandidate RUNNING replicas=1  requests served=1895
+t=118.0s  phase=idle  EtaCandidate RUNNING replicas=1  requests served=1895
+peak candidate replicas = 3 (min 1, max 3); downscale_delay_s=60 so scale-down happens only after a minute of low load

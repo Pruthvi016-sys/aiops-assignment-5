@@ -1,0 +1,114 @@
+{
+  "one_worker": {
+    "per_level": [
+      {
+        "concurrency": 1,
+        "rps": 423.2,
+        "p95_ms": 3.5,
+        "littles_law_mean_ms": 2.36,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 2,
+        "rps": 456.5,
+        "p95_ms": 5.9,
+        "littles_law_mean_ms": 4.38,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 4,
+        "rps": 414.8,
+        "p95_ms": 14.8,
+        "littles_law_mean_ms": 9.64,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 8,
+        "rps": 305.8,
+        "p95_ms": 39.7,
+        "littles_law_mean_ms": 26.16,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 16,
+        "rps": 320.5,
+        "p95_ms": 73.5,
+        "littles_law_mean_ms": 49.92,
+        "meets_slo": true
+      }
+    ],
+    "service_demand_ms": 2.36,
+    "max_rps": 456.5,
+    "saturation_concurrency_littles_law": 1.08,
+    "observed_knee_concurrency_95pct_of_max": 2,
+    "slo_p95_ms": 80.0,
+    "capacity_under_slo_rps": 456.5,
+    "capacity_under_slo_at_concurrency": 2
+  },
+  "two_workers": {
+    "per_level": [
+      {
+        "concurrency": 1,
+        "rps": 443.8,
+        "p95_ms": 2.6,
+        "littles_law_mean_ms": 2.25,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 2,
+        "rps": 433.2,
+        "p95_ms": 6.3,
+        "littles_law_mean_ms": 4.62,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 4,
+        "rps": 734.5,
+        "p95_ms": 9.3,
+        "littles_law_mean_ms": 5.45,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 8,
+        "rps": 823.8,
+        "p95_ms": 13.7,
+        "littles_law_mean_ms": 9.71,
+        "meets_slo": true
+      },
+      {
+        "concurrency": 16,
+        "rps": 831.5,
+        "p95_ms": 27.7,
+        "littles_law_mean_ms": 19.24,
+        "meets_slo": true
+      }
+    ],
+    "service_demand_ms": 2.25,
+    "max_rps": 831.5,
+    "saturation_concurrency_littles_law": 1.87,
+    "observed_knee_concurrency_95pct_of_max": 8,
+    "slo_p95_ms": 80.0,
+    "capacity_under_slo_rps": 831.5,
+    "capacity_under_slo_at_concurrency": 16
+  },
+  "batch": [
+    {
+      "batch": 1,
+      "rps": 446.2,
+      "p50_ms": 2.2,
+      "mean_request_ms": 2.24,
+      "ms_per_row": 2.2411,
+      "rows_per_s": 446.2
+    },
+    {
+      "batch": 100,
+      "rps": 367.0,
+      "p50_ms": 2.7,
+      "mean_request_ms": 2.72,
+      "ms_per_row": 0.0272,
+      "rows_per_s": 36700.0
+    }
+  ],
+  "capacity_ratio_2w_over_1w": 1.82,
+  "max_rps_ratio_2w_over_1w": 1.82
+}

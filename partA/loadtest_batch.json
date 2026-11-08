@@ -1,0 +1,18 @@
+[
+  {
+    "batch": 1,
+    "rps": 446.2,
+    "p50_ms": 2.2,
+    "mean_request_ms": 2.24,
+    "ms_per_row": 2.2411,
+    "rows_per_s": 446.2
+  },
+  {
+    "batch": 100,
+    "rps": 367.0,
+    "p50_ms": 2.7,
+    "mean_request_ms": 2.72,
+    "ms_per_row": 0.0272,
+    "rows_per_s": 36700.0
+  }
+]

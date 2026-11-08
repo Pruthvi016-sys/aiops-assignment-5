@@ -1,0 +1,86 @@
+{
+  "registry": [
+    {
+      "version": 1,
+      "aliases": "prod",
+      "bundle": "v1",
+      "run_id": "d9d59fe48a824b0eb5644a46363708cb"
+    },
+    {
+      "version": 2,
+      "aliases": "candidate",
+      "bundle": "v2",
+      "run_id": "9f8f360062e54f2da990afa28281dc41"
+    }
+  ],
+  "default": {
+    "criteria": {
+      "mae_gain": true,
+      "latency_p95": true,
+      "slice_rush_no_regression": true,
+      "slice_rain_no_regression": true
+    },
+    "promote": true,
+    "details": {
+      "rel_mae_gain": 0.4894,
+      "min_rel_gain": 0.03,
+      "cand_p95_ms": 1.5208,
+      "max_p95_ms": 10.0,
+      "cand_mae_rush": 8.5795,
+      "max_allowed_mae_rush": 20.6639,
+      "cand_mae_rain": 6.2853,
+      "max_allowed_mae_rain": 12.2038
+    },
+    "prod_metrics": {
+      "mae": 11.9553,
+      "mae_rush": 19.6799,
+      "mae_rain": 11.6227,
+      "p95_ms": 1.4773,
+      "model_version": "v1"
+    },
+    "cand_metrics": {
+      "mae": 6.1049,
+      "mae_rush": 8.5795,
+      "mae_rain": 6.2853,
+      "p95_ms": 1.5208,
+      "model_version": "v2"
+    },
+    "thresholds": "defaults (min_rel_gain=0.03, max_p95_ms=10.0, max_slice_regression=0.05)"
+  },
+  "min_rel_gain_0.60": {
+    "criteria": {
+      "mae_gain": false,
+      "latency_p95": true,
+      "slice_rush_no_regression": true,
+      "slice_rain_no_regression": true
+    },
+    "promote": false,
+    "details": {
+      "rel_mae_gain": 0.4894,
+      "min_rel_gain": 0.6,
+      "cand_p95_ms": 1.3436,
+      "max_p95_ms": 10.0,
+      "cand_mae_rush": 8.5795,
+      "max_allowed_mae_rush": 20.6639,
+      "cand_mae_rain": 6.2853,
+      "max_allowed_mae_rain": 12.2038
+    },
+    "prod_metrics": {
+      "mae": 11.9553,
+      "mae_rush": 19.6799,
+      "mae_rain": 11.6227,
+      "p95_ms": 1.3863,
+      "model_version": "v1"
+    },
+    "cand_metrics": {
+      "mae": 6.1049,
+      "mae_rush": 8.5795,
+      "mae_rain": 6.2853,
+      "p95_ms": 1.3436,
+      "model_version": "v2"
+    },
+    "thresholds": {
+      "min_rel_gain": 0.6
+    }
+  }
+}

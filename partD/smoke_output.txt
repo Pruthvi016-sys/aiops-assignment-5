@@ -1,0 +1,22 @@
+smoke test -> http://127.0.0.1:8000/v1/models/eta:predict  expect-version=v1  max-p95-ms=80.0  headers={}
+[PASS] health       HTTP 200 {'status': 'ok', 'model_version': 'v1'}
+[PASS] predict      HTTP 200 prediction=[93.8] model_version=v1 expected=v1
+[PASS] plausible    batch=[6.5, 52.9, 175.3, 398.0, 847.0] order_preserved=True
+[PASS] sanity-dist  distance_km [5.0, 20.0, 60.0, 140.0] -> ETA [42.2, 80.9, 184.0, 390.4]
+[PASS] sanity-traf  traffic_index [0.0, 0.5, 1.0] -> ETA [72.4, 93.8, 115.1]
+[PASS] sanity-stops n_stops [2, 10, 20] -> ETA [76.5, 111.1, 154.3]
+[PASS] invalid-422  hour=25 -> 422; infeasible -> 422 ('infeasible' in body: True); empty batch -> 422
+[PASS] latency      p50=2.3 ms p95=2.5 ms (limit 80.0 ms)
+RESULT: PASS (8/8 checks passed)
+exit code: 0
+smoke test -> http://127.0.0.1:8000/v1/models/eta:predict  expect-version=v2  max-p95-ms=80.0  headers={}
+[FAIL] health       HTTP 200 {'status': 'ok', 'model_version': 'v1'}
+[FAIL] predict      HTTP 200 prediction=[93.8] model_version=v1 expected=v2
+[PASS] plausible    batch=[6.5, 52.9, 175.3, 398.0, 847.0] order_preserved=True
+[PASS] sanity-dist  distance_km [5.0, 20.0, 60.0, 140.0] -> ETA [42.2, 80.9, 184.0, 390.4]
+[PASS] sanity-traf  traffic_index [0.0, 0.5, 1.0] -> ETA [72.4, 93.8, 115.1]
+[PASS] sanity-stops n_stops [2, 10, 20] -> ETA [76.5, 111.1, 154.3]
+[PASS] invalid-422  hour=25 -> 422; infeasible -> 422 ('infeasible' in body: True); empty batch -> 422
+[PASS] latency      p50=2.2 ms p95=2.5 ms (limit 80.0 ms)
+RESULT: FAIL (6/8 checks passed)
+exit code: 1
