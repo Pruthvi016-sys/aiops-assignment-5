@@ -11,7 +11,7 @@ Two pre-trained delivery-time regressors (**v1** Ridge, **v2** Gradient Boosting
 
 | Video | Link |
 |---|---|
-| 🎥 Demo + explanation (2–5 min) | _add Google Drive link here_ |
+| 🎥 Demo + explanation (2–5 min) | https://drive.google.com/file/d/1mYJZ5BAmX_JxWmyhQ5OKajSouVly78Im/view?usp=drivesdk |
 
 **Report:** [`REPORT.pdf`](REPORT.pdf) (4 pages) has every table, every written answer, the machine description and the list of what was not tested.
 
