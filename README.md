@@ -138,8 +138,8 @@ Run `source .venv/bin/activate` in every new terminal.
 
 ### 0. Setup and data
 ```bash
-git clone https://github.com/Pruthvi016-sys/aiops-assignment5.git
-cd aiops-assignment5
+git clone https://github.com/Pruthvi016-sys/aiops-assignment-5.git
+cd aiops-assignment-5
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
